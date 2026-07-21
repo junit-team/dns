@@ -1,0 +1,38 @@
+name: DNSControl
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: dnscontrol
+  cancel-in-progress: false
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  INWX_USER: ${{ secrets.INWX_USER }}
+  INWX_PASSWORD: ${{ secrets.INWX_PASSWORD }}
+
+jobs:
+  dnscontrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check config
+        uses: docker://stackexchange/dnscontrol:4.43.3
+        with:
+          args: check
+
+      - name: Preview
+        if: github.event_name == 'pull_request'
+        uses: docker://stackexchange/dnscontrol:4.43.3
+        with:
+          args: preview
+
+      - name: Push
+        if: github.event_name == 'push'
+        uses: docker://stackexchange/dnscontrol:4.43.3
+        with:
+          args: push
