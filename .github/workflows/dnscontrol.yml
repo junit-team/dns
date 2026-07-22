@@ -48,6 +48,7 @@ jobs:
             echo '```'
             sed 's/\x1b\[[0-9;]*m//g' preview.txt
             echo '```'
+            echo '[Build log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ job.check_run_id }}?pr=${{ github.event.pull_request.number }}#step:5:1)'
           } > comment.md
           gh pr comment "${{ github.event.pull_request.number }}" --edit-last --create-if-none --body-file comment.md
 
