@@ -4,8 +4,8 @@ var DSP_CLOUDFLARE = NewDnsProvider("cloudflare");
 var DSP_INWX = NewDnsProvider("inwx");
 
 D("junit.org", REG_NONE,
-    DnsProvider(DSP_CLOUDFLARE, 0),
-    DnsProvider(DSP_INWX),
+    DnsProvider(DSP_CLOUDFLARE),
+    DnsProvider(DSP_INWX, 0),
     DefaultTTL(300),
 
     // statichost.eu
