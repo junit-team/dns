@@ -45,8 +45,8 @@ jobs:
         run: |
           {
             echo '### `dnscontrol preview`'
-            echo '```ansi'
-            cat preview.txt
+            echo '```'
+            sed 's/\x1b\[[0-9;]*m//g' preview.txt
             echo '```'
           } > comment.md
           gh pr comment "${{ github.event.pull_request.number }}" --edit-last --create-if-none --body-file comment.md
