@@ -1,4 +1,5 @@
 var REG_NONE = NewRegistrar("none");
+var REG_INWX = NewRegistrar("inwx");
 var DSP_CLOUDFLARE = NewDnsProvider("cloudflare");
 var DSP_INWX = NewDnsProvider("inwx");
 
@@ -26,4 +27,18 @@ D("junit.org", REG_NONE,
     TXT("_dmarc", "v=DMARC1; p=quarantine; adkim=s"),
 
     TXT("_atproto", "did=did:plc:3lqgjtqn3jdc26uryc4ibdw3"),
+);
+
+D("apiguardian.org", REG_INWX,
+  DnsProvider(DSP_INWX),
+  DefaultTTL(3600),
+  NAMESERVER_TTL("86400"),
+  ALIAS("@", "junit-org.statichost.page."),
+);
+
+D("opentest4j.org", REG_INWX,
+  DnsProvider(DSP_INWX),
+  DefaultTTL(3600),
+  NAMESERVER_TTL("86400"),
+  ALIAS("@", "junit-org.statichost.page."),
 );

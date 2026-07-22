@@ -1,6 +1,6 @@
-# DNS records for junit.org
+# DNS records for JUnit's domains
 
-managed via [DNSControl](https://dnscontrol.org).
+managed via [DNSControl](https://dnscontrol.org)
 
 ## Cloudflare → INWX migration
 
