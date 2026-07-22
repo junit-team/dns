@@ -45,7 +45,7 @@ jobs:
         run: |
           {
             echo '### `dnscontrol preview`'
-            echo '```'
+            echo '```ansi'
             cat preview.txt
             echo '```'
           } > comment.md
