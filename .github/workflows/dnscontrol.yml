@@ -27,18 +27,15 @@ jobs:
         with:
           persist-credentials: false
 
+      - uses: jdx/mise-action@dad1bfd3df957f44999b559dd69dc1671cb4e9ea # v4.2.1
+
       - name: Check config
-        uses: docker://ghcr.io/dnscontrol/dnscontrol:4.43.3
-        with:
-          args: check
+        run: dnscontrol check
 
       - name: Preview
         if: github.event_name == 'pull_request'
-        shell: bash
-        run: |
-          docker run --rm -v "$PWD:/dns" \
-            -e CLOUDFLARE_API_TOKEN -e INWX_USER -e INWX_PASSWORD \
-            ghcr.io/dnscontrol/dnscontrol:4.43.3 preview | tee preview.txt
+        shell: bash # needed for `bash -o pipefail`
+        run: dnscontrol preview | tee preview.txt
 
       - name: Comment preview on PR
         if: ${{ !cancelled() && github.event_name == 'pull_request' }}
@@ -55,6 +52,4 @@ jobs:
 
       - name: Push
         if: github.event_name == 'push'
-        uses: docker://ghcr.io/dnscontrol/dnscontrol:4.43.3
-        with:
-          args: push
+        run: dnscontrol push
