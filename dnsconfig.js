@@ -8,15 +8,20 @@ D("junit.org", REG_NONE,
     DnsProvider(DSP_INWX),
     DefaultTTL(300),
 
+    // statichost.eu
     ALIAS("@", "junit-org.statichost.page."),
     CNAME("www", "junit-org.statichost.page."),
-    CNAME("api", "edge.redirect.pizza."),
     CNAME("assets", "junit-assets.statichost.page."),
-    CNAME("develocity", "junit.develocity.cloud."),
     CNAME("docs", "junit-docs.statichost.page."),
-    CNAME("eu-develocity-node", "eu-node.junit.develocity.cloud."),
     CNAME("schemas", "junit-schemas.statichost.page."),
+
+    // Redirects
+    CNAME("api", "edge.redirect.pizza."),
     CNAME("start", "edge.redirect.pizza."),
+
+    // Develocity
+    CNAME("develocity", "junit.develocity.cloud."),
+    CNAME("eu-develocity-node", "eu-node.junit.develocity.cloud."),
 
     // Mail: anonaddy (addy.io) forwarding
     MX("@", 10, "mail.anonaddy.me."),
@@ -26,6 +31,7 @@ D("junit.org", REG_NONE,
     TXT("@", "v=spf1 include:spf.anonaddy.me -all"),
     TXT("_dmarc", "v=DMARC1; p=quarantine; adkim=s"),
 
+    // Bluesky domain verification
     TXT("_atproto", "did=did:plc:3lqgjtqn3jdc26uryc4ibdw3"),
 );
 
