@@ -24,18 +24,18 @@ jobs:
           persist-credentials: false
 
       - name: Check config
-        uses: docker://stackexchange/dnscontrol:4.43.3
+        uses: docker://ghcr.io/dnscontrol/dnscontrol:4.43.3
         with:
           args: check
 
       - name: Preview
         if: github.event_name == 'pull_request'
-        uses: docker://stackexchange/dnscontrol:4.43.3
+        uses: docker://ghcr.io/dnscontrol/dnscontrol:4.43.3
         with:
           args: preview
 
       - name: Push
         if: github.event_name == 'push'
-        uses: docker://stackexchange/dnscontrol:4.43.3
+        uses: docker://ghcr.io/dnscontrol/dnscontrol:4.43.3
         with:
           args: push
