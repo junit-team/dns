@@ -35,7 +35,8 @@ jobs:
       - name: Preview
         if: github.event_name == 'pull_request'
         shell: bash # needed for `bash -o pipefail`
-        run: dnscontrol preview | tee preview.txt
+        # Renovate PRs must not change any DNS records to be auto-merged
+        run: dnscontrol preview ${{ github.actor == 'renovate[bot]' && '--expect-no-changes' || '' }} | tee preview.txt
 
       - name: Comment preview on PR
         if: ${{ !cancelled() && github.event_name == 'pull_request' }}
