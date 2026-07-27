@@ -1,12 +1,9 @@
-var REG_NONE = NewRegistrar("none");
 var REG_INWX = NewRegistrar("inwx");
-var DSP_CLOUDFLARE = NewDnsProvider("cloudflare");
 var DSP_INWX = NewDnsProvider("inwx");
 
-D("junit.org", REG_NONE,
-    DnsProvider(DSP_CLOUDFLARE, 0),
+D("junit.org", REG_INWX,
     DnsProvider(DSP_INWX),
-    DefaultTTL(300),
+    DefaultTTL(3600),
 
     // statichost.eu
     ALIAS("@", "junit-org.statichost.page."),

@@ -14,7 +14,6 @@ permissions:
   pull-requests: write
 
 env:
-  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
   INWX_USER: ${{ secrets.INWX_USER }}
   INWX_PASSWORD: ${{ secrets.INWX_PASSWORD }}
 
