@@ -11,13 +11,12 @@ D("junit.org", REG_NONE,
     // statichost.eu
     ALIAS("@", "junit-org.statichost.page."),
     CNAME("www", "junit-org.statichost.page."),
-    CNAME("api-test", "junit-api.statichost.page."),
+    CNAME("api", "junit-api.statichost.page."),
     CNAME("assets", "junit-assets.statichost.page."),
     CNAME("docs", "junit-docs.statichost.page."),
     CNAME("schemas", "junit-schemas.statichost.page."),
 
     // Redirects
-    CNAME("api", "edge.redirect.pizza."),
     CNAME("start", "edge.redirect.pizza."),
 
     // Develocity
