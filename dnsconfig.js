@@ -7,10 +7,10 @@ D("junit.org", REG_INWX,
 
     // statichost.eu
     ALIAS("@", "junit-org.statichost.page."),
-    CNAME("www", "junit-org.statichost.page."),
+    CNAME("www", "site-01kcr7g70wfjbbdkmv5kgqrz39.b-cdn.net."),
     CNAME("api", "junit-api.statichost.page."),
     CNAME("assets", "junit-assets.statichost.page."),
-    CNAME("docs", "junit-docs.statichost.page."),
+    CNAME("docs", "site-01kcr6ra7jfjb8s9bsmtc813kf.b-cdn.net."),
     CNAME("schemas", "junit-schemas.statichost.page."),
 
     // Redirects
