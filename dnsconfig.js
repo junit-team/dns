@@ -8,10 +8,10 @@ D("junit.org", REG_INWX,
     // statichost.eu
     ALIAS("@", "junit-org.statichost.page."),
     CNAME("www", "site-01kcr7g70wfjbbdkmv5kgqrz39.b-cdn.net."),
-    CNAME("api", "junit-api.statichost.page."),
-    CNAME("assets", "junit-assets.statichost.page."),
+    CNAME("api", "site-01kyczngr6eqyt4zm5xw92yt2y.b-cdn.net."),
+    CNAME("assets", "site-01kgd9cacre1gbesdsbpvsdzp6.b-cdn.net."),
     CNAME("docs", "site-01kcr6ra7jfjb8s9bsmtc813kf.b-cdn.net."),
-    CNAME("schemas", "junit-schemas.statichost.page."),
+    CNAME("schemas", "site-01kfgv12kae29b83tq3fxwywv8.b-cdn.net."),
 
     // Redirects
     CNAME("start", "edge.redirect.pizza."),
