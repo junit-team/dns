@@ -4,6 +4,7 @@ var DSP_INWX = NewDnsProvider("inwx");
 D("junit.org", REG_INWX,
     DnsProvider(DSP_INWX),
     DefaultTTL(3600),
+    AUTODNSSEC_ON,
 
     // statichost.eu
     ALIAS("@", "junit-org.statichost.page."),
@@ -35,6 +36,7 @@ D("junit.org", REG_INWX,
 D("apiguardian.org", REG_INWX,
   DnsProvider(DSP_INWX),
   DefaultTTL(3600),
+  AUTODNSSEC_ON,
   NAMESERVER_TTL("86400"),
   ALIAS("@", "junit-org.statichost.page."),
 );
@@ -42,6 +44,7 @@ D("apiguardian.org", REG_INWX,
 D("opentest4j.org", REG_INWX,
   DnsProvider(DSP_INWX),
   DefaultTTL(3600),
+  AUTODNSSEC_ON,
   NAMESERVER_TTL("86400"),
   ALIAS("@", "junit-org.statichost.page."),
 );
